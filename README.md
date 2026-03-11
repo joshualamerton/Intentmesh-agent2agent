@@ -269,6 +269,29 @@ This example simulates:
 2. an IntentMesh negotiation agent evaluating the request
 3. generation of an execution plan
 
+## Multi-Agent Simulation
+
+IntentMesh can be demonstrated with a simple three-agent interaction.
+
+Agents involved:
+
+Buyer Agent  
+Listing Agent  
+Mortgage Agent  
+
+Run the simulation:
+
+```bash
+python examples/multi_agent_demo.py
+```
+
+Flow:
+
+Buyer agent creates an intent  
+Listing agent proposes properties  
+Mortgage agent evaluates financing  
+IntentMesh assembles an execution plan
+
 Contribution Areas
 
 constraint evaluation systems
