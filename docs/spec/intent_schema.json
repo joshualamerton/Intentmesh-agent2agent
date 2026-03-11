@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "required": [
+    "intent_id",
+    "objective",
+    "constraints"
+  ],
+  "properties": {
+    "intent_id": {
+      "type": "string"
+    },
+    "objective": {
+      "type": "string"
+    },
+    "constraints": {
+      "type": "object"
+    },
+    "preferences": {
+      "type": "object"
+    },
+    "execution_policy": {
+      "type": "object"
+    },
+    "risk_tolerance": {
+      "type": "number"
+    }
+  }
+}
