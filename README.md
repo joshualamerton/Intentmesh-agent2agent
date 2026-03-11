@@ -1,5 +1,9 @@
 IntentMesh-agent2agent
 
+![License](https://img.shields.io/badge/license-Apache--2.0-blue)
+![Python](https://img.shields.io/badge/python-3.9+-blue)
+![Status](https://img.shields.io/badge/build-experimental-orange)
+
 IntentMesh is an open protocol and reference architecture for structured negotiation between autonomous software agents.
 
 As software systems become agentic, the interaction model is shifting from:
