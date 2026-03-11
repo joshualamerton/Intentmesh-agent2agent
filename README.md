@@ -6,6 +6,14 @@ IntentMesh-agent2agent
 
 IntentMesh is an open protocol and reference architecture for structured negotiation between autonomous software agents.
 
+## Quick Start
+
+Clone the repository and run the multi-agent simulation demonstrating intent negotiation.
+
+git clone https://github.com/joshuamlamerton/Intentmesh-agent2agent
+cd Intentmesh-agent2agent
+python examples/multi_agent_demo.py
+
 As software systems become agentic, the interaction model is shifting from:
 
 human → software → outcome
