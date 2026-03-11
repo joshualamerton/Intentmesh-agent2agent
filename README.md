@@ -253,6 +253,22 @@ examples
 commerce_agent
 property_agent
 
+## Running the Demo
+
+A minimal example demonstrates how an agent evaluates an intent contract.
+
+Run:
+
+```bash
+python examples/demo.py
+```
+
+This example simulates:
+
+1. a buyer agent submitting an intent
+2. an IntentMesh negotiation agent evaluating the request
+3. generation of an execution plan
+
 Contribution Areas
 
 constraint evaluation systems
