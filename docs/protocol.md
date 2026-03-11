@@ -1,3 +1,7 @@
+Protocol development for IntentMesh is tracked in Issue #1.
+
+This document evolves alongside that discussion and reflects the current working protocol draft.
+
 # IntentMesh Protocol
 
 The IntentMesh protocol defines how agents negotiate structured intents.
