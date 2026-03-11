@@ -166,6 +166,35 @@ Negotiation Engine ranking
 ↓
 Execution Plan returned
 
+## System Architecture
+
+```mermaid
+flowchart TB
+
+A[Applications<br>Commerce / Travel / Real Estate / Procurement]
+
+B[Execution Layer<br>APIs / Payments / Booking / Data Services]
+
+C[IntentMesh Core]
+
+C1[Intent Schema]
+C2[Constraint Engine]
+C3[Negotiation Engine]
+C4[Counterfactual Simulator]
+C5[Trust Ledger]
+
+D[Communication Layer<br>HTTP / gRPC / WebSocket / A2A / MCP]
+
+A --> C
+C --> B
+D --> C
+
+C --> C1
+C --> C2
+C --> C3
+C --> C4
+C --> C5
+
 Repository Roadmap
 
 Phase 1
