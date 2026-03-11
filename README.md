@@ -100,7 +100,9 @@ Simulates potential outcomes before execution.
 Trust Ledger
 Records historical interactions between agents to evaluate reliability.
 
-Example Intent Contract
+## Example Intent Contract
+
+```json
 {
   "intent_id": "abc-123",
   "objective": "purchase_primary_residence",
@@ -114,7 +116,11 @@ Example Intent Contract
     "max_agents_involved": 5
   }
 }
-Negotiation Response
+```
+
+## Negotiation Response
+
+```json
 {
   "intent_id": "abc-123",
   "accepted": true,
@@ -131,6 +137,7 @@ Negotiation Response
     }
   ]
 }
+```
 Example Use Case
 
 US home purchase coordination.
