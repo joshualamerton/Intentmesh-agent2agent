@@ -1,0 +1,95 @@
+class Intent:
+    def __init__(self, intent_id, objective, constraints):
+        self.intent_id = intent_id
+        self.objective = objective
+        self.constraints = constraints
+
+
+class BuyerAgent:
+    def create_intent(self):
+        return Intent(
+            intent_id="demo-002",
+            objective="purchase_property",
+            constraints={
+                "location": "Austin, TX",
+                "budget_max": 750000,
+                "bedrooms_min": 3
+            }
+        )
+
+
+class ListingAgent:
+    def search_properties(self, intent):
+        properties = [
+            {"id": "MLS1001", "price": 720000, "bedrooms": 3},
+            {"id": "MLS1002", "price": 690000, "bedrooms": 3}
+        ]
+
+        results = []
+
+        for p in properties:
+            if p["price"] <= intent.constraints["budget_max"]:
+                results.append(p)
+
+        return results
+
+
+class MortgageAgent:
+    def simulate_financing(self, property_price):
+        interest_rate = 0.065
+        down_payment = property_price * 0.20
+        loan = property_price - down_payment
+
+        monthly_payment = (loan * interest_rate) / 12
+
+        return {
+            "estimated_monthly_payment": round(monthly_payment, 2),
+            "risk_score": 0.12
+        }
+
+
+class IntentMeshNegotiator:
+    def assemble_plan(self, property_data, financing_data):
+        return {
+            "execution_path": [
+                "listing_agent",
+                "mortgage_agent"
+            ],
+            "property_id": property_data["id"],
+            "estimated_cost": property_data["price"],
+            "monthly_payment": financing_data["estimated_monthly_payment"],
+            "risk_score": financing_data["risk_score"]
+        }
+
+
+def run_simulation():
+    buyer = BuyerAgent()
+    listing_agent = ListingAgent()
+    mortgage_agent = MortgageAgent()
+    negotiator = IntentMeshNegotiator()
+
+    intent = buyer.create_intent()
+
+    print("\nBuyer submits intent")
+    print(intent.__dict__)
+
+    candidate_properties = listing_agent.search_properties(intent)
+
+    print("\nListing agent returns properties")
+    print(candidate_properties)
+
+    selected_property = candidate_properties[0]
+
+    financing = mortgage_agent.simulate_financing(selected_property["price"])
+
+    print("\nMortgage agent simulation")
+    print(financing)
+
+    plan = negotiator.assemble_plan(selected_property, financing)
+
+    print("\nIntentMesh negotiation result")
+    print(plan)
+
+
+if __name__ == "__main__":
+    run_simulation()
