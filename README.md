@@ -63,6 +63,7 @@ simulation results
 System Architecture
 
 IntentMesh sits between communication protocols and execution layers.
+Protocol development and specification discussion are tracked in [Issue #1](../../issues/1).
 
 Applications
 commerce | travel | procurement | real estate
